@@ -9,15 +9,25 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    strictPort: true,
   },
   preview: {
     port: 8080,
+    strictPort: true,
   },
   build: {
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: mode !== 'production',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          vendor: ['@radix-ui/*', 'class-variance-authority', 'clsx', 'tailwind-merge'],
+        },
+      },
+    },
   },
   plugins: [
     react(),

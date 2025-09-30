@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Jarvis Theme - Black and Blue Design System */
+    --background: 0 0% 4%;
+    --foreground: 200 100% 85%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 200 100% 85%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 200 100% 85%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 200 50% 15%;
+    --secondary-foreground: 200 100% 85%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 200 30% 65%;
+
+    --accent: 195 100% 60%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 50% 25%;
+    --input: 0 0% 12%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Jarvis Interface Colors */
+    --jarvis-blue: 200 100% 50%;
+    --jarvis-blue-light: 200 100% 70%;
+    --jarvis-blue-dark: 200 100% 30%;
+    --jarvis-glow: 200 100% 50%;
+    --jarvis-pulse: 195 100% 60%;
+
+    /* Gradients */
+    --gradient-jarvis: linear-gradient(135deg, hsl(var(--jarvis-blue)), hsl(var(--jarvis-pulse)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--jarvis-glow) / 0.3) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-jarvis: 0 0 30px hsl(var(--jarvis-blue) / 0.5);
+    --shadow-pulse: 0 0 50px hsl(var(--jarvis-pulse) / 0.8);
+
+    /* Animations */
+    --transition-jarvis: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
